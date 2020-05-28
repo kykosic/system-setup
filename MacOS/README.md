@@ -41,4 +41,5 @@
 * iTerm2
     * Preference > Profiles > Keys > Preset > Natural Text Editing
     * Preference > Profiles > Text > 12pt font
+    * Preferences > Appearance > Tabs > Uncheck strech tabs to fill bar
     * System Preferences > Security/Privacy > Developer Tools > Add iTerm
