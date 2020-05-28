@@ -42,10 +42,3 @@
     * Preference > Profiles > Keys > Preset > Natural Text Editing
     * Preference > Profiles > Text > 12pt font
     * System Preferences > Security/Privacy > Developer Tools > Add iTerm
-
-
-# Order:
-* brew
-* Conda
-* ZSH
-*
