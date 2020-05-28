@@ -47,6 +47,5 @@ Additionally, install language support with:
 :CocInstall coc-rust-analyzer
 :CocInstall coc-java
 "
-read -n 1 -p "Press any key to continue" var
 
 cd $cwd
