@@ -3,7 +3,6 @@
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "/Users/kylekosic/miniconda3/bin/flake8",
     "languageserver": {
         "metals": {
             "command": "metals-vim",
