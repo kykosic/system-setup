@@ -46,6 +46,12 @@ Additionally, install language support with:
 :CocInstall coc-yaml
 :CocInstall coc-rust-analyzer
 :CocInstall coc-java
+
+For python, you can set interpreter/linter with:
+:CocCommand
+Search "python.setInterpreter" and select
+:CocCommand
+Search "python.setLinter" and select
 "
 
 cd $cwd
