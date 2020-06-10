@@ -26,7 +26,7 @@ alias ecr-login2='eval $\(aws ecr get-login --no-include-email --region ap-north
 
 # Misc
 alias vi=nvim
-alias gitsub=git submodule update --init --recursive
+alias gitsub="git submodule update --init --recursive"
 
 # Kubernetes configs
 alias kc1='kubectl --kubeconfig ~/.kube/config-devportal-east-cluster'
