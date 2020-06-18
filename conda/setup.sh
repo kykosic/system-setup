@@ -2,7 +2,11 @@
 set -e
 
 echo "Installing Conda"
-filename="Miniconda3-latest-MacOSX-x86_64.sh"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    filename="Miniconda3-latest-MacOSX-x86_64.sh"
+else
+    filename="Miniconda3-latest-Linux-x86_64.sh"
+fi
 
 cwd=$(pwd)
 cd "$HOME"

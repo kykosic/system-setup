@@ -7,17 +7,24 @@ echo "Installing nodejs and yarn"
 if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install nodejs yarn
 else
-    curl -sL install-node.now.sh | sh
-    curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+    curl -sL install-node.now.sh | sudo bash
+    curl --compressed -o- -L https://yarnpkg.com/install.sh | sudo bash
 fi
 
 echo "Installing neovim"
 sudo chown -R $USER /opt
 cd /opt
-curl -fLo nvim-macos.tar.gz https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
-tar xzf nvim-macos.tar.gz
-ln -s /opt/nvim-osx64/bin/nvim /usr/local/bin/nvim
-rm nvim-macos.tar.gz
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    ARCHIVE=nvim-macos.tar.gz
+    DIR=nvim-osx64
+else
+    ARCHIVE=nvim-linux64.tar.gz
+    DIR=nvim-linux64
+fi
+curl -fLo $ARCHIVE https://github.com/neovim/neovim/releases/download/nightly/$ARCHIVE
+tar xzf $ARCHIVE
+ln -s /opt/$DIR/bin/nvim /usr/local/bin/nvim
+rm $ARCHIVE
 
 
 echo "Installing vim-plug"
