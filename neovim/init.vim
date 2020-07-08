@@ -22,10 +22,8 @@ Plug 'neomake/neomake'                                            " run programs
 Plug 'terryma/vim-multiple-cursors'                               " Multiple cursors selection, etc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " LSP client + autocompletion plugin
 Plug 'itchyny/lightline.vim'                                      " configurable status line (can be used by coc)
-Plug 'derekwyatt/vim-scala'                                       " scala plugin
 Plug 'Yggdroot/indentLine'                                        " Indentation visual guide
 Plug 'sheerun/vim-polyglot'                                       " Universal language syntax highlighting
-Plug 'rust-lang/rust.vim'                                         " rust plugin
 
 call plug#end()
 
