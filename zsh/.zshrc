@@ -28,23 +28,6 @@ alias ecr-login2='eval $\(aws ecr get-login --no-include-email --region ap-north
 alias vi=nvim
 alias gitsub="git submodule update --init --recursive"
 
-# Remote development commands
-INSTANCE_ID=""
-PRIVATE_KEY=""
-alias awsp="aws --profile personal"
-alias remote-start="awsp ec2 start-instances --instance-ids $INSTANCE_ID"
-alias remote-stop="awsp ec2 stop-instances --instance-ids $INSTANCE_ID"
-alias remote-type="awsp ec2 modify-instance-attribute \
-  --instance-id $INSTANCE_ID --instance-type"
-alias remote-status="awsp ec2 describe-instances \
-  --instance-ids $INSTANCE_ID \
-  --query 'Reservations[*].Instances[*].[InstanceType,State.Name]' \
-  --output=text"
-alias remote="ssh -i $PRIVATE_KEY ubuntu@\$(awsp ec2 describe-instances \
-  --instance-ids $INSTANCE_ID \
-  --query 'Reservations[*].Instances[*].PublicDnsName' \
-  --output=text)"
-
 # Kubernetes configs
 alias kc1='kubectl --kubeconfig ~/.kube/config-devportal-east-cluster'
 alias kc2='kubectl --kubeconfig ~/.kube/config-prodportal-east-cluster'
