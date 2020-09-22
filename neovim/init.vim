@@ -48,6 +48,7 @@ set listchars=tab:▸\ ,eol:¬ " Invisible characters representation when :set l
 set clipboard=unnamedplus   " Copy/Paste to/from clipboard
 set cursorline              " Highlight line cursor is currently on
 set completeopt+=noinsert   " Select the first item of popup menu automatically without inserting it
+set mouse=a                 " Enable mouse usage
 
 
 " Markdown settings
