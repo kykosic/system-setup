@@ -34,14 +34,14 @@ alias kc2='kubectl --kubeconfig ~/.kube/config-prodportal-east-cluster'
 alias kc3='kubectl --kubeconfig ~/.kube/config-dev-hpc-east'
 alias kc4='kubectl --kubeconfig ~/.kube/config-prod-hpc-east'
 alias kc5='kubectl --kubeconfig ~/.kube/config-prod-hpc-japan-1'
-alias gke1='kubectl --kubeconfig ~/.kube/config-dev-hpc-us-central1-a'
-alias gke2='kubectl --kubeconfig ~/.kube/config-dev-hpc-us-central1-f'
+alias gke1='kubectl --kubeconfig ~/.kube/config-dev-hpc-us-central1-f'
+alias gke2='kubectl --kubeconfig ~/.kube/config-prod-hpc-us-central1-c'
 alias helm1='helm --kubeconfig ~/.kube/config-devportal-east-cluster'
 alias helm2='helm --kubeconfig ~/.kube/config-prodportal-east-cluster'
 alias helm3='helm --kubeconfig ~/.kube/config-dev-hpc-east'
 alias helm4='helm --kubeconfig ~/.kube/config-prod-hpc-east'
 alias helm5='helm --kubeconfig ~/.kube/config-prod-hpc-japan-1'
-alias helmg1='helm --kubeconfig ~/.kube/config-dev-hpc-us-central1-a'
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
