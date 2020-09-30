@@ -22,8 +22,10 @@ Plug 'neomake/neomake'                                            " run programs
 Plug 'terryma/vim-multiple-cursors'                               " Multiple cursors selection, etc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " LSP client + autocompletion plugin
 Plug 'itchyny/lightline.vim'                                      " configurable status line (can be used by coc)
+Plug 'derekwyatt/vim-scala'                                       " scala plugin
 Plug 'Yggdroot/indentLine'                                        " Indentation visual guide
 Plug 'sheerun/vim-polyglot'                                       " Universal language syntax highlighting
+Plug 'rust-lang/rust.vim'                                         " rust plugin
 
 call plug#end()
 
@@ -45,12 +47,11 @@ set showmatch               " Shows matching parenthesis.
 set matchtime=2             " Time during which the matching parenthesis is shown.
 set background=dark         " Color adapted to dark background.
 set listchars=tab:▸\ ,eol:¬ " Invisible characters representation when :set list.
-set clipboard=unnamedplus   " Copy/Paste to/from clipboard
 set cursorline              " Highlight line cursor is currently on
 set completeopt+=noinsert   " Select the first item of popup menu automatically without inserting it
-"set mouse=a                 " Enable mouse usage
+" set mouse=a               " Enable mouse usage
 set mouse=nicr              " Enable mouse usage and scroling
-
+" set clipboard=unnamedplus " Copy/Paste to/from clipboard
 
 
 " Markdown settings
