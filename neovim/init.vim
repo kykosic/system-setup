@@ -70,7 +70,6 @@ filetype on  " File-specific formatting
 autocmd FileType py setlocal shiftwidth=4 tabstop=4  " Python uses 4 spaces instead of 2
 autocmd FileType make set noexpandtab shiftwidth=4  " Makefiles require tab indents
 
-
 " Search
 set incsearch  " Incremental search.
 set ignorecase " Case insensitive.
@@ -106,7 +105,7 @@ nnoremap <C-z> :nohlsearch<CR>
 " Better Unix support
 set viewoptions=folds,options,cursor,unix,slash
 set encoding=utf-8
-set guicursor=
+" set guicursor=
 
 
 " Trim Whitespace on save
@@ -297,3 +296,10 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Change cursor shape between insert and normal mode in iTerm2.app
+if $TERM_PROGRAM =~ "iTerm"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
+
