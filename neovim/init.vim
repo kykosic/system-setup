@@ -14,7 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 Plug 'junegunn/fzf.vim'                                           " fuzzy finder
 Plug 'scrooloose/nerdtree'                                        " folders tree
 Plug 'scrooloose/nerdcommenter'                                   " code commenter
-Plug 'doums/darcula'                                              " color scheme
+Plug 'sainnhe/sonokai'                                            " color scheme
 Plug 'kien/rainbow_parentheses.vim'                               " for nested parentheses
 Plug 'junegunn/vim-easy-align'                                    " alignment plugin
 Plug 'tpope/vim-surround'                                         " quickly edit surroundings (brackets, html tags, etc)
@@ -83,9 +83,12 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
 " Color scheme
-colorscheme darcula
 set termguicolors
-let g:lightline = { 'colorscheme': 'darculaOriginal' }
+let g:sonokai_style = 'shusia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+colorscheme sonokai
+let g:airline_theme = 'sonokai'
 
 
 " Airline config
