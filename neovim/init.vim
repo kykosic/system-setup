@@ -14,7 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 Plug 'junegunn/fzf.vim'                                           " fuzzy finder
 Plug 'scrooloose/nerdtree'                                        " folders tree
 Plug 'scrooloose/nerdcommenter'                                   " code commenter
-Plug 'dracula/vim'                                                " dark theme
+Plug 'doums/darcula'                                              " color scheme
 Plug 'kien/rainbow_parentheses.vim'                               " for nested parentheses
 Plug 'junegunn/vim-easy-align'                                    " alignment plugin
 Plug 'tpope/vim-surround'                                         " quickly edit surroundings (brackets, html tags, etc)
@@ -47,7 +47,7 @@ set showmatch               " Shows matching parenthesis.
 set matchtime=2             " Time during which the matching parenthesis is shown.
 set background=dark         " Color adapted to dark background.
 set listchars=tab:▸\ ,eol:¬ " Invisible characters representation when :set list.
-set cursorline              " Highlight line cursor is currently on
+" set cursorline              " Highlight line cursor is currently on
 set completeopt+=noinsert   " Select the first item of popup menu automatically without inserting it
 " set mouse=a               " Enable mouse usage
 set mouse=nicr              " Enable mouse usage and scroling
@@ -78,11 +78,14 @@ set smartcase  " Case insensitive if no uppercase letter in pattern, case sensit
 
 " Ruler
 set colorcolumn=80
+autocmd Filetype rust set colorcolumn=100
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
 " Color scheme
-colorscheme dracula
+colorscheme darcula
+set termguicolors
+let g:lightline = { 'colorscheme': 'darculaOriginal' }
 
 
 " Airline config
@@ -105,7 +108,10 @@ nnoremap <C-z> :nohlsearch<CR>
 " Better Unix support
 set viewoptions=folds,options,cursor,unix,slash
 set encoding=utf-8
-" set guicursor=
+
+
+" Close shortcut
+noremap <C-q> :confirm qall<CR>
 
 
 " Trim Whitespace on save
