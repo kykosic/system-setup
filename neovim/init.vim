@@ -14,8 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 Plug 'junegunn/fzf.vim'                                           " fuzzy finder
 Plug 'scrooloose/nerdtree'                                        " folders tree
 Plug 'scrooloose/nerdcommenter'                                   " code commenter
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }              " color scheme
-Plug 'kien/rainbow_parentheses.vim'                               " for nested parentheses
+Plug 'chriskempson/base16-vim'                                    " color scheme
 Plug 'junegunn/vim-easy-align'                                    " alignment plugin
 Plug 'tpope/vim-surround'                                         " quickly edit surroundings (brackets, html tags, etc)
 Plug 'neomake/neomake'                                            " run programs asynchronously and highlight errors
@@ -78,17 +77,18 @@ set smartcase  " Case insensitive if no uppercase letter in pattern, case sensit
 
 " Ruler
 set colorcolumn=80
-autocmd Filetype rust set colorcolumn=100
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
+" Rust
+let g:rustfmt_autosave = 1
+autocmd Filetype rust set colorcolumn=100
+
+
 " Color scheme
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 set termguicolors
-let g:material_theme_style = 'darker'
-colorscheme material
-let g:lightline = { 'colorscheme': 'material_vim' }
-let g:airline_theme = 'material'
+let base16colorspace=256
+colorscheme base16-monokai
 
 
 " Airline config
