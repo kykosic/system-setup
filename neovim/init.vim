@@ -14,7 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 Plug 'junegunn/fzf.vim'                                           " fuzzy finder
 Plug 'scrooloose/nerdtree'                                        " folders tree
 Plug 'scrooloose/nerdcommenter'                                   " code commenter
-Plug 'chriskempson/base16-vim'                                    " color scheme
+Plug 'doums/darcula'                                              " color scheme
 Plug 'junegunn/vim-easy-align'                                    " alignment plugin
 Plug 'tpope/vim-surround'                                         " quickly edit surroundings (brackets, html tags, etc)
 Plug 'neomake/neomake'                                            " run programs asynchronously and highlight errors
@@ -87,8 +87,8 @@ autocmd Filetype rust set colorcolumn=100
 
 " Color scheme
 set termguicolors
-let base16colorspace=256
-colorscheme base16-monokai
+colorscheme darcula
+let g:lightline = { 'colorscheme': 'darculaOriginal' }
 
 
 " Airline config
