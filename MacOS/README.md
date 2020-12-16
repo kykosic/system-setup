@@ -5,6 +5,9 @@
     * Touch to click
     * Max tracking speed
 * Keyboard
+    * Keyboard
+        * Key Repeat > Fast
+        * Delay Until Repeat > Short
     * Keyboard > Modifier Keys...
         * Caps Lock Key: Escape
     * Keyboard > Touch Bar shows: Expanded Control Strip
