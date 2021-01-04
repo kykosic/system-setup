@@ -77,8 +77,10 @@ set smartcase  " Case insensitive if no uppercase letter in pattern, case sensit
 
 " Ruler
 set colorcolumn=80
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+" highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
+" Wrapping
+set formatoptions-=r  " do not continue comments on newline in INSERT mode
 
 " Rust
 let g:rustfmt_autosave = 1
