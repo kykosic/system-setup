@@ -17,8 +17,8 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git)
 
 ZSH_DISABLE_COMPFIX=true
-source $ZSH/oh-my-zsh.sh
 
+source $ZSH/oh-my-zsh.sh
 
 # ECR Login
 alias ecr-login='eval $\(aws ecr get-login --no-include-email --region us-east-1 \)'
@@ -27,33 +27,52 @@ alias ecr-login2='eval $\(aws ecr get-login --no-include-email --region ap-north
 # Misc
 alias vi=nvim
 alias gitsub="git submodule update --init --recursive"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
-# Kubernetes configs
+# Kubernetes/helm cluster aliases
 alias kc1='kubectl --kubeconfig ~/.kube/config-devportal-east-cluster'
-alias kc2='kubectl --kubeconfig ~/.kube/config-prodportal-east-cluster'
-alias kc3='kubectl --kubeconfig ~/.kube/config-dev-hpc-east'
-alias kc4='kubectl --kubeconfig ~/.kube/config-prod-hpc-east'
-alias kc5='kubectl --kubeconfig ~/.kube/config-prod-hpc-japan-1'
-alias gk1='kubectl --kubeconfig ~/.kube/config-dev-hpc-us-central1-f'
-alias gk2='kubectl --kubeconfig ~/.kube/config-prod-hpc-us-central1-c'
-alias gk3='kubectl --kubeconfig ~/.kube/config-dev-hpc-us-central1'
 alias helm1='helm --kubeconfig ~/.kube/config-devportal-east-cluster'
+
+alias kc2='kubectl --kubeconfig ~/.kube/config-prodportal-east-cluster'
 alias helm2='helm --kubeconfig ~/.kube/config-prodportal-east-cluster'
+
+alias kc3='kubectl --kubeconfig ~/.kube/config-dev-hpc-east'
 alias helm3='helm --kubeconfig ~/.kube/config-dev-hpc-east'
+
+alias kc4='kubectl --kubeconfig ~/.kube/config-prod-hpc-east'
 alias helm4='helm --kubeconfig ~/.kube/config-prod-hpc-east'
+
+alias kc5='kubectl --kubeconfig ~/.kube/config-prod-hpc-japan-1'
 alias helm5='helm --kubeconfig ~/.kube/config-prod-hpc-japan-1'
+
+alias gk1='kubectl --kubeconfig ~/.kube/config-dev-hpc-us-central1'
+alias helmg1='helm --kubeconfig ~/.kube/config-dev-hpc-us-central1'
+
+alias gk2='kubectl --kubeconfig ~/.kube/config-prod-hpc-us-central1-c'
+alias helmg2='helm --kubeconfig ~/.kube/config-prod-hpc-us-central1-c'
+
+alias gk3='kubectl --kubeconfig ~/.kube/config-prod-hpc-asia-northeast1-a'
+alias helmg3='helm --kubeconfig ~/.kube/config-prod-hpc-asia-northeast1-a'
+
+alias gk4='kubectl --kubeconfig ~/.kube/config-prod-hpc-us-central1'
+alias helmg4='helm --kubeconfig ~/.kube/config-prod-hpc-us-central1'
+
+alias gk5='kubectl --kubeconfig ~/.kube/config-prod-hpc-asia-northeast1'
+alias helmg5='helm --kubeconfig ~/.kube/config-prod-hpc-asia-northeast1'
+
+alias ak1='kubectl --kubeconfig ~/.kube/config-dev-hpc-westus2'
 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/kylekosic/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/kylekosic/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/kylekosic/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME/miniconda3/bin:$PATH"
+        export PATH="/Users/kylekosic/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -64,10 +83,13 @@ conda activate dev
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 
 # Node
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# VSCode
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -76,3 +98,12 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # Keep separate shell histories for each terminal
 unsetopt inc_append_history
 unsetopt share_history
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kylekosic/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kylekosic/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kylekosic/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kylekosic/google-cloud-sdk/completion.zsh.inc'; fi
+
