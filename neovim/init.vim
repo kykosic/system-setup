@@ -14,7 +14,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 Plug 'junegunn/fzf.vim'                                           " fuzzy finder
 Plug 'scrooloose/nerdtree'                                        " folders tree
 Plug 'scrooloose/nerdcommenter'                                   " code commenter
-Plug 'kykosic/material.vim', { 'branch': 'main' }                 " color scheme
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }              " color scheme
 Plug 'junegunn/vim-easy-align'                                    " alignment plugin
 Plug 'tpope/vim-surround'                                         " quickly edit surroundings (brackets, html tags, etc)
 Plug 'neomake/neomake'                                            " run programs asynchronously and highlight errors
