@@ -1,56 +1,74 @@
 " Required config
 set directory=~/.vim/backup
-set backupdir=~/.vim/backup " keep swap files here
-filetype off                " required
+set backupdir=~/.vim/backup
+filetype off
 
 
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'tpope/vim-fugitive'                                         " git plugin
-Plug 'vim-airline/vim-airline'                                    " bottom status bar
-Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder conf
-Plug 'junegunn/fzf.vim'                                           " fuzzy finder
-Plug 'scrooloose/nerdtree'                                        " folders tree
-Plug 'scrooloose/nerdcommenter'                                   " code commenter
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }              " color scheme
-Plug 'junegunn/vim-easy-align'                                    " alignment plugin
-Plug 'tpope/vim-surround'                                         " quickly edit surroundings (brackets, html tags, etc)
-Plug 'neomake/neomake'                                            " run programs asynchronously and highlight errors
-Plug 'terryma/vim-multiple-cursors'                               " Multiple cursors selection, etc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " LSP client + autocompletion plugin
-Plug 'itchyny/lightline.vim'                                      " configurable status line (can be used by coc)
-Plug 'derekwyatt/vim-scala'                                       " scala plugin
-Plug 'Yggdroot/indentLine'                                        " Indentation visual guide
-Plug 'sheerun/vim-polyglot'                                       " Universal language syntax highlighting
-Plug 'rust-lang/rust.vim'                                         " rust plugin
+" Status bar
+Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
+" Highlight visual yanks
+Plug 'machakann/vim-highlightedyank'
+" Fuzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" Nert tree
+Plug 'scrooloose/nerdtree'
+" Line commenter tool
+Plug 'scrooloose/nerdcommenter'
+" Git status
+Plug 'tpope/vim-fugitive'
+" Color theme
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+" Asynchronous syntax checkking
+Plug 'neomake/neomake'
+" Language server
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Visual indent guide
+Plug 'Yggdroot/indentLine'
+" Multi-language syntax support
+Plug 'sheerun/vim-polyglot'
+" Rust lanaguage support
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
 
 " Misc vim settings
 syntax on
-set shell=/bin/bash
+set shell=/bin/zsh
 set laststatus=2
 set noshowmode
 set backspace=indent,eol,start
-set hidden                  " Hide files when leaving them.
-set number                  " Show line numbers.
-set numberwidth=1           " Minimum line number column width.
-set cmdheight=2             " Number of screen lines to use for the commandline.
-set textwidth=120           " Lines length limit (0 if no limit).
-set formatoptions=jtcrq     " Sensible default line auto cutting and formatting.
-set linebreak               " Don't cut lines in the middle of a word .
-set showmatch               " Shows matching parenthesis.
-set matchtime=2             " Time during which the matching parenthesis is shown.
-set background=dark         " Color adapted to dark background.
-set listchars=tab:▸\ ,eol:¬ " Invisible characters representation when :set list.
-" set cursorline              " Highlight line cursor is currently on
-set completeopt+=noinsert   " Select the first item of popup menu automatically without inserting it
-" set mouse=a               " Enable mouse usage
-set mouse=nicr              " Enable mouse usage and scroling
-" set clipboard=unnamedplus " Copy/Paste to/from clipboard
+" hide files when leaving them
+set hidden
+" show line numbers
+set number
+" minimum line number column width
+set numberwidth=1
+" number of screen lines to use for command line
+set cmdheight=2
+" line length limit
+set textwidth=120
+" default line auto cutting and formatting
+set formatoptions=jtcrq
+" don't cut lines in middle of word
+set linebreak
+" show matching parenthesis
+set showmatch
+" time to show matching perenthesis
+set matchtime=2
+" color for dark background
+set background=dark
+" invisible characters for :set list
+set listchars=tab:▸\ ,eol:¬
+" select first item of popup menu automatically without insert
+set completeopt+=noinsert
+" enable mouse usage and scrolling
+set mouse=nicr
 
 
 " Markdown settings
@@ -70,19 +88,19 @@ autocmd FileType py setlocal shiftwidth=4 tabstop=4  " Python uses 4 spaces inst
 autocmd FileType make set noexpandtab shiftwidth=4  " Makefiles require tab indents
 
 " Search
-set incsearch  " Incremental search.
-set ignorecase " Case insensitive.
-set smartcase  " Case insensitive if no uppercase letter in pattern, case sensitive otherwise.
+" incremental search
+set incsearch
+" Case insensitive if no uppercase letter in pattern, case sensitive otherwise.
+set smartcase
 
 
 " Ruler
 set colorcolumn=80
-" highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
-" Wrapping
-set formatoptions-=r  " do not continue comments on newline in INSERT mode
+" do not continue comments on newline in INSERT mode
+set formatoptions-=r
 
-" Rust
+" Rust settings
 let g:rustfmt_autosave = 1
 autocmd Filetype rust set colorcolumn=100
 
@@ -99,6 +117,20 @@ let g:airline_theme = 'material'
 " Airline config
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+
+
+" Nerdtree git plugin symbols
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "ᵐ",
+    \ "Staged"    : "ˢ",
+    \ "Untracked" : "ᵘ",
+    \ "Renamed"   : "ʳ",
+    \ "Unmerged"  : "ᶴ",
+    \ "Deleted"   : "ˣ",
+    \ "Dirty"     : "˜",
+    \ "Clean"     : "ᵅ",
+    \ "Unknown"   : "?"
+    \ }
 
 
 " Highlighting for jsonc filetype
@@ -132,11 +164,6 @@ endfun
 command! TrimWhitespace call TrimWhitespace() " Trim whitespace with command
 autocmd BufWritePre * :call TrimWhitespace()  " Trim whitespace on every save
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 
 " Window Switching
 nnoremap <C-h> <C-w>h
@@ -155,23 +182,9 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 
-" Nerdtree git plugin symbols
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "ᵐ",
-    \ "Staged"    : "ˢ",
-    \ "Untracked" : "ᵘ",
-    \ "Renamed"   : "ʳ",
-    \ "Unmerged"  : "ᶴ",
-    \ "Deleted"   : "ˣ",
-    \ "Dirty"     : "˜",
-    \ "Clean"     : "ᵅ",
-    \ "Unknown"   : "?"
-    \ }
-
 
 " Fuzzy finder shortcut
 nnoremap <C-p> :FZF<CR>
-
 
 " Disable arrow keys and page up / down
 noremap <Up> <nop>
@@ -192,10 +205,6 @@ vnoremap <PageUp> <nop>
 noremap <PageDown> <nop>
 inoremap <PageDown> <nop>
 vnoremap <PageDown> <nop>
-
-
-" vim-scala
-au BufRead,BufNewFile *.sbt set filetype=scala
 
 
 " COC config
@@ -252,7 +261,6 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>ac <Plug>(coc-codeaction)
 
 " Remap for do action format
-"nmap <silent> F <Plug>(coc-action-format) "does not work
 nnoremap <silent> F :call CocAction('format')<CR>
 
 " Show signature help
@@ -292,10 +300,8 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 nnoremap <leader> <Esc> :pclose<CR>
 
 nnoremap <silent> <M-B> :call CocRequest('scalametals', 'workspace/executeCommand', { 'command': 'build-import' })<CR>
-"nnoremap <silent> <M-Z> :ccl<CR>
 
 " COC Snippets
-
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
