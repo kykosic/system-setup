@@ -21,6 +21,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 " Git status
 Plug 'tpope/vim-fugitive'
+" Open current line on github
+Plug 'ruanyl/vim-gh-line'
 " Color theme
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 " Asynchronous syntax checkking
