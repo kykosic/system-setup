@@ -92,6 +92,8 @@ autocmd FileType make set noexpandtab shiftwidth=4  " Makefiles require tab inde
 " Search
 " incremental search
 set incsearch
+" case insensitive search
+set ignorecase
 " Case insensitive if no uppercase letter in pattern, case sensitive otherwise.
 set smartcase
 
