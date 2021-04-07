@@ -14,3 +14,6 @@ cd "$dir"
 cp .zshrc "$HOME"
 cp .p10k.zsh "$HOME"
 cd "$cwd"
+
+echo "Install ttf fonts in this directory"
+
