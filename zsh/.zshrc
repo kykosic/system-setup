@@ -22,46 +22,13 @@ source $ZSH/oh-my-zsh.sh
 
 # ECR Login
 alias ecr-login='eval $\(aws ecr get-login --no-include-email --region us-east-1 \)'
-alias ecr-login2='eval $\(aws ecr get-login --no-include-email --region ap-northeast-1 \)'
 
 # Misc
 alias vi=nvim
 alias gitsub="git submodule update --init --recursive"
-alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 # Kubernetes/helm cluster aliases
-alias kc1='kubectl --kubeconfig ~/.kube/config-devportal-east-cluster'
-alias helm1='helm --kubeconfig ~/.kube/config-devportal-east-cluster'
-
-alias kc2='kubectl --kubeconfig ~/.kube/config-prodportal-east-cluster'
-alias helm2='helm --kubeconfig ~/.kube/config-prodportal-east-cluster'
-
-alias kc3='kubectl --kubeconfig ~/.kube/config-dev-hpc-east'
-alias helm3='helm --kubeconfig ~/.kube/config-dev-hpc-east'
-
-alias kc4='kubectl --kubeconfig ~/.kube/config-prod-hpc-east'
-alias helm4='helm --kubeconfig ~/.kube/config-prod-hpc-east'
-
-alias kc5='kubectl --kubeconfig ~/.kube/config-prod-hpc-japan-1'
-alias helm5='helm --kubeconfig ~/.kube/config-prod-hpc-japan-1'
-
-alias gk1='kubectl --kubeconfig ~/.kube/config-dev-hpc-us-central1'
-alias helmg1='helm --kubeconfig ~/.kube/config-dev-hpc-us-central1'
-
-alias gk2='kubectl --kubeconfig ~/.kube/config-prod-hpc-us-central1-c'
-alias helmg2='helm --kubeconfig ~/.kube/config-prod-hpc-us-central1-c'
-
-alias gk3='kubectl --kubeconfig ~/.kube/config-prod-hpc-asia-northeast1-a'
-alias helmg3='helm --kubeconfig ~/.kube/config-prod-hpc-asia-northeast1-a'
-
-alias gk4='kubectl --kubeconfig ~/.kube/config-prod-hpc-us-central1'
-alias helmg4='helm --kubeconfig ~/.kube/config-prod-hpc-us-central1'
-
-alias gk5='kubectl --kubeconfig ~/.kube/config-prod-hpc-asia-northeast1'
-alias helmg5='helm --kubeconfig ~/.kube/config-prod-hpc-asia-northeast1'
-
-alias ak1='kubectl --kubeconfig ~/.kube/config-dev-hpc-westus2'
-
+alias kc=kubectl
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
