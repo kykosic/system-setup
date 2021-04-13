@@ -30,6 +30,7 @@ alias gitsub="git submodule update --init --recursive"
 # Kubernetes
 alias kc=kubectl
 alias kctx="kubectl config use-context"
+alias kcns='f() { kubectl config set-context --current --namespace="$1" }; f'
 source <(kubectl completion zsh)
 
 # >>> conda initialize >>>
