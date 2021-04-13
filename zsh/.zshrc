@@ -27,8 +27,10 @@ alias ecr-login='eval $\(aws ecr get-login --no-include-email --region us-east-1
 alias vi=nvim
 alias gitsub="git submodule update --init --recursive"
 
-# Kubernetes/helm cluster aliases
+# Kubernetes
 alias kc=kubectl
+alias kctx="kubectl config use-context"
+source <(kubectl completion zsh)
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -49,12 +51,6 @@ conda activate dev
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-
-# Node
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # VSCode
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
@@ -67,10 +63,4 @@ unsetopt inc_append_history
 unsetopt share_history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kylekosic/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kylekosic/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kylekosic/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kylekosic/google-cloud-sdk/completion.zsh.inc'; fi
 
