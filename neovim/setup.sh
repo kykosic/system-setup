@@ -46,20 +46,12 @@ To complete installation, open a neovim seesion and run:
 :PlugInstall
 
 Additionally, install language support with:
-:CocInstall coc-rust-analyzer
-:CocInstall coc-python
-:CocInstall coc-go
-:CocInstall coc-json
-:CocInstall coc-snippets
-:CocInstall coc-tsserver
-:CocInstall coc-yaml
-:CocInstall coc-java
+:CocInstall coc-rust-analyzer coc-pyright coc-go coc-json coc-snippets coc-yaml
 
-For python, you can set interpreter/linter with:
+
+For python, you can set interpreterwith:
 :CocCommand
 Search "python.setInterpreter" and select
-:CocCommand
-Search "python.setLinter" and select
 "
 
 cd $cwd
