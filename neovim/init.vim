@@ -82,11 +82,11 @@ let g:vim_markdown_frontmatter = 1
 
 " Tabs
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 filetype on  " File-specific formatting
-autocmd FileType py setlocal shiftwidth=4 tabstop=4  " Python uses 4 spaces instead of 2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 autocmd FileType make set noexpandtab shiftwidth=4  " Makefiles require tab indents
 
 " Search
