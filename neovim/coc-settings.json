@@ -1,5 +1,6 @@
 {
     "python.formatting.provider": "black",
+    "python.analysis.useLibraryCodeForTypes": false,
     "coc.preferences.formatOnSaveFiletypes": ["rust", "python"],
     "rust-analyzer.procMacro.enable": true,
     "rust-analyzer.inlayHints.typeHints": true,
