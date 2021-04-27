@@ -54,7 +54,8 @@ set numberwidth=1
 " number of screen lines to use for command line
 set cmdheight=2
 " line length limit
-set textwidth=120
+set textwidth=0
+set wrapmargin=0
 " default line auto cutting and formatting
 set formatoptions=jtcrq
 " don't cut lines in middle of word
