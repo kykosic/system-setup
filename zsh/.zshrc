@@ -24,9 +24,8 @@ source $ZSH/oh-my-zsh.sh
 alias ecr-login='eval $\(aws ecr get-login --no-include-email --region us-east-1 \)'
 
 # Misc
-alias vi=nvim
 alias gitsub="git submodule update --init --recursive"
-alias pypath='export PYTHONPATH=$(pwd):$PYTHONPATH'
+alias pypath='PYTHONPATH=$(pwd):$PYTHONPATH nvim'
 
 # Kubernetes
 alias kc=kubectl
