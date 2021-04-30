@@ -35,6 +35,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 " Rust lanaguage support
 Plug 'rust-lang/rust.vim'
+" Multi-line alignment
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
@@ -227,6 +229,11 @@ set nowritebackup
 
 " always show signcolumns
 set signcolumn=yes
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
