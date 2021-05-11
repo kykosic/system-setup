@@ -30,7 +30,7 @@ alias pypath='PYTHONPATH=$(pwd):$PYTHONPATH nvim'
 # Kubernetes
 alias kc=kubectl
 alias kctx="kubectl config use-context"
-alias kcns='f() { kubectl config set-context --current --namespace="$1" }; f'
+alias kns='f() { kubectl config set-context --current --namespace="$1" }; f'
 source <(kubectl completion zsh)
 
 # >>> conda initialize >>>
