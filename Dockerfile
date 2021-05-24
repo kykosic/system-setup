@@ -3,8 +3,9 @@ FROM ubuntu:18.04
 RUN apt-get update \
     && apt-get install -y \
         build-essential \
-        ca-certificates \
         bzip2 \
+        ca-certificates \
+        curl \
         git \
         libglib2.0-0 \
         libsm6 \
@@ -65,12 +66,37 @@ RUN wget --quiet https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/
     && rm ohmyzsh.sh \
     && git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k \
     && rm -rf $ZSH_CUSTOM/themes/powerlevel10k/.git* \
-    && mkdir -p ~/.cache/gitstatus \
+    && mkdir -p $HOME/.cache/gitstatus \
     && wget -O- -nv https://github.com/romkatv/gitstatus/releases/download/v1.3.1/gitstatusd-linux-x86_64.tar.gz \
-        | tar -xz -C ~/.cache/gitstatus gitstatusd-linux-x86_64
-COPY zsh/.p10k.zsh container/.zshrc ${HOME}/
+        | tar -xz -C $HOME/.cache/gitstatus gitstatusd-linux-x86_64
+COPY zsh/.p10k.zsh container/.zshrc $HOME/
 
+# Install npm/yarn
+RUN conda install -y nodejs yarn
 
-WORKDIR ${HOME}
+# Neovim
+RUN cd opt/ \
+    && curl -fLo nvim-linux64.tar.gz https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz \
+    && tar xzf nvim-linux64.tar.gz \
+    && ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim \
+    && rm nvim-linux64.tar.gz \
+    && pip install neovim
+
+# Neovim settings
+COPY neovim/init.vim neovim/coc-settings.json $HOME/.config/nvim/
+
+# Vim-plug and Coc extensions
+ARG COC_EXTS="coc-rust-analyzer coc-pyright coc-go coc-snippets"
+RUN curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
+    && cp $HOME/.config/nvim/init.vim /tmp/init.vim \
+    && sed -i '/plug#end/q' $HOME/.config/nvim/init.vim \
+    && nvim --headless +PlugInstall +qall \
+    && cp /tmp/init.vim $HOME/.config/nvim/init.vim \
+    && mkdir -p $HOME/.config/coc \
+    && nvim --headless +"CocInstall -sync $COC_EXTS" +qall \
+    && nvim --headless +CocUpdateSync +qall
+
+WORKDIR $HOME
 ENTRYPOINT []
 CMD ["/bin/zsh"]
