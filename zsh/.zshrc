@@ -25,7 +25,9 @@ alias ecr-login='eval $\(aws ecr get-login --no-include-email --region us-east-1
 
 # Misc
 alias gitsub="git submodule update --init --recursive"
-alias pypath='PYTHONPATH=$(pwd):$PYTHONPATH nvim'
+alias pypath='export PYTHONPATH=$(pwd):$PYTHONPATH'
+alias vi='PYTHONPATH=$(pwd):$PYTHONPATH nvim'
+
 
 # Kubernetes
 alias kc=kubectl
