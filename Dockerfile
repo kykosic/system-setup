@@ -1,4 +1,9 @@
-FROM ubuntu:18.04
+# Change base image
+# Default: ubuntu:18.04
+# Nvidia: nvidia/cuda:11.1-cudnn8-devel-ubuntu18.04
+ARG BASE_IMAGE=ubuntu:bionic
+FROM ${BASE_IMAGE}
+
 
 RUN apt-get update \
     && apt-get install -y \
