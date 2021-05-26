@@ -12,9 +12,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 " Highlight visual yanks
 Plug 'machakann/vim-highlightedyank'
-" Fuzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Telescope search tool
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 " Nert tree
 Plug 'scrooloose/nerdtree'
 " Line commenter tool
@@ -191,8 +192,9 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 
 
-" Fuzzy finder shortcut
-nnoremap <C-p> :FZF<CR>
+" Telescope shortcut
+nnoremap <C-p> :Telescope find_files<CR>
+nnoremap <C-o> :Telescope live_grep<CR>
 
 " Disable arrow keys and page up / down
 noremap <Up> <nop>
