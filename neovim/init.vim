@@ -194,7 +194,7 @@ let g:NERDTreeDirArrows = 1
 
 " Telescope shortcut
 nnoremap <C-p> :Telescope find_files<CR>
-nnoremap <C-o> :Telescope live_grep<CR>
+nnoremap <C-g> :Telescope live_grep<CR>
 
 " Disable arrow keys and page up / down
 noremap <Up> <nop>
