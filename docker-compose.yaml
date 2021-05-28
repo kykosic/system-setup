@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  devbox:
+    build: .
+    command: tail -f /dev/null
+    volumes:
+    - home-dir:/home/root
+
+volumes:
+  home-dir:
