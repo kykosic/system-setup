@@ -67,3 +67,6 @@ unsetopt share_history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Fix screen orientation
+#alias fixscreen='displayplacer --help'
+
