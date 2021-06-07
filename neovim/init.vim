@@ -8,11 +8,11 @@ filetype off
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Status bar
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 " Highlight visual yanks
 Plug 'machakann/vim-highlightedyank'
-" Telescope search tool
+" Search tools
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -26,16 +26,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'ruanyl/vim-gh-line'
 " Color theme
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-" Asynchronous syntax checkking
-Plug 'neomake/neomake'
 " Language server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Visual indent guide
 Plug 'Yggdroot/indentLine'
-" Multi-language syntax support
-Plug 'sheerun/vim-polyglot'
-" Rust lanaguage support
+" Language support
 Plug 'rust-lang/rust.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'plasticboy/vim-markdown'
 " Multi-line alignment
 Plug 'junegunn/vim-easy-align'
 
@@ -193,6 +191,7 @@ let g:NERDTreeDirArrows = 1
 
 
 " Telescope shortcut
+" nnoremap <C-p> :FZF<CR>
 nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-g> :Telescope live_grep<CR>
 
@@ -218,6 +217,13 @@ vnoremap <PageDown> <nop>
 
 
 " COC config
+let g:coc_global_extensions = [
+    \ 'coc-rust-analyzer',
+    \ 'coc-pyright',
+    \ 'coc-go',
+    \ 'coc-json',
+    \ 'coc-snippets',
+    \ ]
 
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300

@@ -1,6 +1,6 @@
 # Change base image
 # Default: ubuntu:18.04
-# Nvidia: nvidia/cuda:11.1-cudnn8-devel-ubuntu18.04
+# Nvidia:  nvidia/cuda:11.1-cudnn8-devel-ubuntu18.04
 ARG BASE_IMAGE=ubuntu:bionic
 FROM ${BASE_IMAGE}
 
@@ -91,7 +91,6 @@ RUN cd opt/ \
 COPY neovim/init.vim neovim/coc-settings.json $HOME/.config/nvim/
 
 # Vim-plug and Coc extensions
-ARG COC_EXTS="coc-rust-analyzer coc-pyright coc-go coc-snippets"
 RUN curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
     && cp $HOME/.config/nvim/init.vim /tmp/init.vim \
@@ -99,7 +98,7 @@ RUN curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     && nvim --headless +PlugInstall +qall \
     && cp /tmp/init.vim $HOME/.config/nvim/init.vim \
     && mkdir -p $HOME/.config/coc \
-    && nvim --headless +"CocInstall -sync $COC_EXTS" +qall \
+    && nvim --headless +":execute 'CocInstall -sync' join(g:coc_global_extensions)" +qall \
     && nvim --headless +CocUpdateSync +qall
 
 WORKDIR $HOME
