@@ -33,7 +33,6 @@ Plug 'Yggdroot/indentLine'
 " Language support
 Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'plasticboy/vim-markdown'
 " Multi-line alignment
 Plug 'junegunn/vim-easy-align'
 
