@@ -88,6 +88,8 @@ set shiftwidth=4
 filetype on  " File-specific formatting
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType bash setlocal shiftwidth=2 tabstop=2
+autocmd FileType sh   setlocal shiftwidth=2 tabstop=2
 autocmd FileType make set noexpandtab shiftwidth=4  " Makefiles require tab indents
 
 " Search
