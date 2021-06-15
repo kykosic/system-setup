@@ -102,15 +102,14 @@ set smartcase
 
 
 " Ruler
-set colorcolumn=80
+set colorcolumn=100
+autocmd Filetype python set colorcolumn=80
 
 " do not continue comments on newline in INSERT mode
 set formatoptions-=r
 
 " Rust settings
 let g:rustfmt_autosave = 1
-autocmd Filetype rust set colorcolumn=100
-
 
 " Color scheme
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
