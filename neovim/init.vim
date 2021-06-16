@@ -26,6 +26,8 @@ Plug 'ruanyl/vim-gh-line'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 " Language server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Async error highlighting
+Plug 'neomake/neomake'
 " Visual indent guide
 Plug 'Yggdroot/indentLine'
 " Language support
