@@ -228,15 +228,13 @@ let g:coc_global_extensions = [
     \ ]
 
 " Auto-use conda environment for python interpreter
- if !empty($CONDA_PYTHON_EXE)
-     call coc#config('python', {
-        \     'pythonPath': $CONDA_PYTHON_EXE,
-        \     'formatting': {
-        \         'provider': 'black',
-        \         'blackPath': $CONDA_PREFIX . '/bin/black',
-        \     }
-        \ })
- endif
+if $CONDA_PYTHON_EXE != ""
+    call coc#config('python', {'pythonPath': $CONDA_PYTHON_PATH})
+endif
+if $CONDA_PREFIX != ""
+    call coc#config('python', {'formatting': {'blackPath': $CONDA_PREFIX . '/bin/black', 'provider': 'black'}})
+endif
+
 
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
@@ -295,7 +293,7 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>ac <Plug>(coc-codeaction)
 
 " Remap for do action format
-nnoremap <silent> F :call CocAction('format')<CR>
+nmap <leader> fm :call CocAction('format')<CR>
 
 " Show signature help
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')

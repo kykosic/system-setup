@@ -1,4 +1,5 @@
 {
+    "python.formatting.provider": "black",
     "python.analysis.useLibraryCodeForTypes": false,
     "coc.preferences.formatOnSaveFiletypes": ["rust", "python"],
     "rust-analyzer.cargo.allFeatures": true
