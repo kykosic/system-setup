@@ -228,9 +228,15 @@ let g:coc_global_extensions = [
     \ ]
 
 " Auto-use conda environment for python interpreter
-if !empty($CONDA_PYTHON_EXE)
-    call coc#config('python', {'pythonPath': $CONDA_PYTHON_EXE . '/usr/bin/env python'})
-endif
+ if !empty($CONDA_PYTHON_EXE)
+     call coc#config('python', {
+        \     'pythonPath': $CONDA_PYTHON_EXE,
+        \     'formatting': {
+        \         'provider': 'black',
+        \         'blackPath': $CONDA_PREFIX . '/bin/black',
+        \     }
+        \ })
+ endif
 
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
