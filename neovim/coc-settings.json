@@ -2,5 +2,6 @@
     "python.formatting.provider": "black",
     "python.analysis.useLibraryCodeForTypes": false,
     "coc.preferences.formatOnSaveFiletypes": ["rust", "python"],
-    "rust-analyzer.cargo.allFeatures": true
+    "rust-analyzer.procMacro.enable": false,
+    "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"]
 }
