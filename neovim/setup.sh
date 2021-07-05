@@ -21,7 +21,7 @@ else
     ARCHIVE=nvim-linux64.tar.gz
     DIR=nvim-linux64
 fi
-curl -fLo $ARCHIVE https://github.com/neovim/neovim/releases/download/nightly/$ARCHIVE
+curl -fLo $ARCHIVE https://github.com/neovim/neovim/releases/download/v0.5.0/$ARCHIVE
 tar xzf $ARCHIVE
 ln -s /opt/$DIR/bin/nvim /usr/local/bin/nvim
 rm $ARCHIVE
