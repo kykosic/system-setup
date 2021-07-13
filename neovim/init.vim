@@ -7,7 +7,8 @@ filetype off
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Status bar Plug 'vim-airline/vim-airline'
+" Status bar
+Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 " Highlight visual yanks
 Plug 'machakann/vim-highlightedyank'
